@@ -1,0 +1,126 @@
+
+name: Build Android AAB
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Type de build'
+        required: true
+        default: 'release'
+        type: choice
+        options:
+        - release
+        - debug
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'android/**'
+      - 'capacitor.config.ts'
+      - 'package.json'
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📱 Checkout du code
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: ☕ Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: 🔧 Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          api-level: 33
+          build-tools-version: 33.0.0
+
+      - name: 📦 Installer les dépendances
+        run: npm ci
+
+      - name: 🏗️ Build de l'application web
+        run: npm run build
+
+      - name: 🔄 Synchroniser Capacitor
+        run: |
+          npx cap sync android
+          npx cap update android
+
+      - name: 🔐 Créer le keystore de développement
+        if: github.event.inputs.build_type == 'debug' || github.ref != 'refs/heads/main'
+        run: |
+          mkdir -p android/app
+          keytool -genkeypair -v -keystore android/app/debug.keystore \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -alias androiddebugkey \
+            -storepass android -keypass android \
+            -dname "CN=Android Debug,O=Android,C=US"
+
+      - name: 🔐 Configurer le keystore de production
+        if: github.event.inputs.build_type == 'release' && github.ref == 'refs/heads/main'
+        run: |
+          mkdir -p android/app
+          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 --decode > android/app/release.keystore
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+
+      - name: 🚀 Build APK Debug
+        if: github.event.inputs.build_type == 'debug' || github.ref != 'refs/heads/main'
+        run: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew assembleDebug
+        env:
+          ANDROID_KEYSTORE_FILE: app/debug.keystore
+          ANDROID_KEYSTORE_PASSWORD: android
+          ANDROID_KEY_ALIAS: androiddebugkey
+          ANDROID_KEY_PASSWORD: android
+
+      - name: 🚀 Build AAB Release
+        if: github.event.inputs.build_type == 'release' && github.ref == 'refs/heads/main'
+        run: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew bundleRelease
+        env:
+          ANDROID_KEYSTORE_FILE: app/release.keystore
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+
+      - name: 📦 Upload APK Debug
+        if: github.event.inputs.build_type == 'debug' || github.ref != 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: afrikoin-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
+
+      - name: 📦 Upload AAB Release
+        if: github.event.inputs.build_type == 'release' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: afrikoin-release-aab
+          path: android/app/build/outputs/bundle/release/app-release.aab
+          retention-days: 90
+
+      - name: 📊 Taille du fichier généré
+        run: |
+          if [ -f "android/app/build/outputs/apk/debug/app-debug.apk" ]; then
+            echo "📱 Taille APK Debug: $(du -h android/app/build/outputs/apk/debug/app-debug.apk | cut -f1)"
+          fi
+          if [ -f "android/app/build/outputs/bundle/release/app-release.aab" ]; then
+            echo "📦 Taille AAB Release: $(du -h android/app/build/outputs/bundle/release/app-release.aab | cut -f1)"
+          fi
