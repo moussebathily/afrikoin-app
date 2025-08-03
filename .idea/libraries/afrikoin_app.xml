@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="afrikoin-app">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/afrikoin-workflows-complet (2).zip!/" />
+      <root url="jar://$PROJECT_DIR$/afrikoin-vibes-connect-main.zip!/" />
+      <root url="jar://$PROJECT_DIR$/afrikoin-workflows-complet (1).zip!/" />
+      <root url="jar://$PROJECT_DIR$/afrikoin-vibes-connect-main (1).zip!/" />
+      <root url="jar://$PROJECT_DIR$/afrikoin-workflows-complet (3).zip!/" />
+      <root url="jar://$PROJECT_DIR$/afrikoin-vibes-connect-main (3).zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

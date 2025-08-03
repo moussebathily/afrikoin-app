@@ -1,3 +1,4 @@
+#file: noinspection Annotator
 ### ✅ 1. Production: build-deploy.yml (avec validation de version + tag Git)
 
 ```yaml
@@ -62,7 +63,6 @@ jobs:
 ---
 
 ### ✅ 2. Staging: build-staging.yml
-
 ```yaml
 name: Build AfriKoin (Staging)
 
