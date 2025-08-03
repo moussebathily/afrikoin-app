@@ -1,0 +1,44 @@
+import 'dotenv/config';
+
+export default {
+  expo: {
+    name: "AfriKoin",
+    slug: "afrikoin",
+    version: process.env.APP_VERSION || "1.2.2",
+    orientation: "portrait",
+    icon: "./assets/icon.png",
+    userInterfaceStyle: "automatic",
+    splash: {
+      image: "./assets/splash.png",
+      resizeMode: "contain",
+      backgroundColor: "#ffffff"
+    },
+    updates: {
+      fallbackToCacheTimeout: 0,
+      url: "https://u.expo.dev/afrikoin"
+    },
+    assetBundlePatterns: ["**/*"],
+    ios: {
+      supportsTablet: true,
+      bundleIdentifier: "com.afrikoin.myapplication"
+    },
+    android: {
+      package: "com.afrikoin.myapplication",
+      versionCode: 122,
+      adaptiveIcon: {
+        foregroundImage: "./assets/adaptive-icon.png",
+        backgroundColor: "#ffffff"
+      },
+      permissions: [],
+      enableDangerousExperimentalLeanBuilds: true
+    },
+    web: {
+      favicon: "./assets/favicon.png"
+    },
+    extra: {
+      eas: {
+        projectId: "YOUR_PROJECT_ID_HERE"
+      }
+    }
+  }
+};
