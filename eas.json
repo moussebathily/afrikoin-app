@@ -1,0 +1,25 @@
+{
+  "cli": {
+    "version": ">=3.13.0"
+  },
+  "build": {
+    "production": {
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "releaseChannel": "production",
+      "env": {
+        "APP_VERSION": "1.2.2"
+      }
+    },
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      },
+      "releaseChannel": "preview",
+      "env": {
+        "APP_VERSION": "1.2.2-preview"
+      }
+    }
+  }
+}
