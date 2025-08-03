@@ -1,7 +1,7 @@
 #file: noinspection Annotator
 ### ✅ 1. Production: build-deploy.yml (avec validation de version + tag Git)
 
-```yaml
+
 name: Build & Deploy AfriKoin (Production)
 
 on:
@@ -58,12 +58,11 @@ jobs:
           git config user.email "actions@github.com"
           git tag v${{ github.event.inputs.version }}
           git push origin v${{ github.event.inputs.version }}
-```
+
 
 ---
 
 ### ✅ 2. Staging: build-staging.yml
-```yaml
 name: Build AfriKoin (Staging)
 
 on:
@@ -97,7 +96,7 @@ jobs:
         with:
           name: staging-apk
           path: ./build/*.apk
-```
+
 
 ---
 
