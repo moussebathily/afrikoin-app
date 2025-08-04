@@ -1,0 +1,35 @@
+name: 📦 Publish Android AAB to Play Store
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: 🚀 Build & Upload to Google Play
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 📦 Install Expo CLI
+        run: npm install -g expo-cli eas-cli
+
+      - name: 🔐 Decode Google Service Account JSON
+        run: |
+          echo "${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}" > ./service-account.json
+
+      - name: ⚙️ Login to Expo
+        run: eas whoami || eas login -u "${{ secrets.EXPO_USERNAME }}" -p "${{ secrets.EXPO_PASSWORD }}"
+
+      - name: 🛠️ Build AAB for Android (Production)
+        run: eas build --platform android --profile production --non-interactive
+
+      - name: 📤 Upload to Google Play
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: ./service-account.json
+          packageName: com.afrikoin.myapplication
+          releaseFile: ./dist/*.aab
+          track: production
+          status: completed
