@@ -1,0 +1,55 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="AndroidLintAndroidGradlePluginVersion" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintAnimatorKeep" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintCredentialDependency" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintEditedTargetSdkVersion" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintExpensiveAssertion" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintGradleDependency" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintHighAppVersionCode" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintLogConditional" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintMissingVersion" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintStopShip" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintUnspecifiedRegisterReceiverFlag" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintWakelock" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+      <scope name="Project Files" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintWrongGradleMethod" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+    </inspection_tool>
+    <inspection_tool class="AndroidLintWrongSdkInt" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Project Files" level="TYPO" enabled="true" editorAttributes="TYPO" />
+    </inspection_tool>
+    <inspection_tool class="AwaitNotInLoop" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="GroovyBusyWait" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="NotifyCalledOnCondition" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SleepWhileHoldingLock" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="WaitCalledOnCondition" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>
