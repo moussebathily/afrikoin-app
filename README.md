@@ -1,86 +1,95 @@
 # 🌍 Bienvenue sur **AfriKoin App**
 
-> La première plateforme panafricaine de petites annonces avec **intelligence artificielle intégrée**, publication vocale, modération automatique et géolocalisation en temps réel.
+> La première plateforme panafricaine de petites annonces, avec **intelligence artificielle intégrée**, publication vocale, modération automatique, traduction multilingue et géolocalisation en temps réel.
 
 ---
 
-## 🔗 Projet en ligne
+## 🔗 Lien du projet
 
-* **URL GitHub** : [AfriKoin App sur GitHub](https://github.com/moussebathily/afrikoin-app)
-* **Domaine personnalisé** : [https://afrikoin.online](https://afrikoin.online)
+* **URL GitHub** : [AfriKoin App](https://github.com/moussebathily/afrikoin-app)
+* **Site Web** : [https://afrikoin.online](https://afrikoin.online)
 
-## 🧩 Technologies utilisées
+## 🧪 Stack technologique
 
-* ✅ **React + TypeScript** (frontend)
-* ⚡ **Vite** pour le développement rapide web
-* 🎨 **Tailwind CSS** + **shadcn/ui** pour les composants UI
-* 📱 **Expo + EAS Build** pour l'application mobile (Android)
-* 🤖 **IA GPT-4o intégrée** : modération, assistant, traduction
-* 🌍 **Multilingue** : français, anglais, bambara, etc.
-* 🔄 **GitHub Actions** : CI/CD, publication Play Store
+| Catégorie       | Technologies clés                               |
+| --------------- | ----------------------------------------------- |
+| Frontend Web    | React, TypeScript, Vite, Tailwind, shadcn/ui    |
+| App Mobile      | React Native, Expo, EAS Build (Android)         |
+| Backend & Cloud | Supabase, Vercel, GitHub Actions                |
+| IA intégrée     | GPT-4o (modération, assistant, traduction)      |
+| Multilingue     | 🇫🇷 🇬🇧 🇧🇫 🇲🇱 Bambara, Mooré, Wolof, etc. |
 
-## 🧪 Démarrage local
+## 🚀 Fonctionnalités principales
+
+* 📝 Création et publication d’annonces avec images & vidéos
+* 🎙️ Publication vocale (reconnaissance vocale intégrée)
+* 🤖 Modération automatique (texte + médias)
+* 📍 Géolocalisation dynamique des annonces
+* 🌐 Traduction automatique des contenus
+* 🛡️ Système de vérification utilisateur (KYC)
+* 🗂️ Recherche intelligente par filtre, catégorie, distance
+
+## 🔧 Démarrage local (Web & Mobile)
 
 ```bash
-# 1. Cloner le projet
-git clone https://github.com/moussebathily/afrikoin-app.git
+# 1. Cloner le repo
+https://github.com/moussebathily/afrikoin-app.git
 cd afrikoin-app
 
 # 2. Installer les dépendances
 npm install
 
-# 3. Lancer en local (web)
+# 3. Lancer le site Web local
 npm run dev
 
-# 4. Build mobile Android (EAS)
-eas build --platform android --profile preview
+# 4. Générer l’app Android (.aab)
+eas build --platform android --profile production
 ```
 
-📌 *Requis : Node.js v18+ — utilise [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)*
+📌 *Node.js v18+ recommandé. Utilisez `nvm` si nécessaire.*
 
-## ⚙️ Fichiers clés
+## 📁 Structure & fichiers
 
-* `app.config.js` : configuration Expo
-* `eas.json` : profils de build (production, preview)
-* `tsconfig.json` : config TypeScript commune
-* `.github/workflows/` : automatisation CI/CD (build, publication, tag)
+| Fichier / Dossier     | Description                               |
+| --------------------- | ----------------------------------------- |
+| `eas.json`            | Profils EAS pour production / preview     |
+| `app.config.js`       | Config globale pour Expo / app mobile     |
+| `tsconfig.json`       | Configuration TypeScript commune          |
+| `.github/workflows/`  | Actions GitHub CI/CD automatiques         |
+| `keystore.properties` | Config signature Android (via .gitignore) |
 
-## 🚀 Déploiement
+## 📦 Build & Déploiement
 
-### 🌐 Web
+### 🌐 Web (React)
 
-* Hébergé sur [afrikoin.online](https://afrikoin.online) via Vercel
+* Hébergé sur : [https://afrikoin.online](https://afrikoin.online)
+* Déploiement Vercel automatique
 
-### 📱 Mobile Android
+### 📱 Mobile (Android)
 
-* Build avec EAS : `.aab` généré automatiquement
-* Publication sur Google Play via `upload-google-play`
-* Version actuelle : `1.2.2`
+* Build `.aab` via `eas build`
+* Déploiement Play Store par `upload-google-play`
+* Version actuelle : **1.2.2**
+* Signature avec : `afrikoin-release-key.jks`
 
-## 🔐 Keystore Android
+## 🔄 CI/CD GitHub
 
-* Fichier : `afrikoin-release-key.jks`
-* Configuration : `keystore.properties`
-* Protégé via `.gitignore`
-* Utilisé dans `build.gradle` pour la signature
+* ✅ Build & tag automatique via `workflow_dispatch`
+* ✅ Upload Play Store (production uniquement)
+* ✅ Génération automatique du `CHANGELOG.md`
 
-## 📦 Publication automatisée
+## 📊 Badges GitHub
 
-* **Tag Git** : versionné automatiquement (`v1.2.2`...)
-* **Publication Google Play** : déclenchée depuis GitHub Actions
-* **CHANGELOG.md** : mis à jour à chaque version
+![Build Production](https://github.com/moussebathily/afrikoin-app/actions/workflows/build-deploy.yml/badge.svg)
+![Build Staging](https://github.com/moussebathily/afrikoin-app/actions/workflows/build-staging.yml/badge.svg)
 
-## 📊 Badges CI
+## 👤 Auteur & contact
 
-![Build & Deploy](https://github.com/moussebathily/afrikoin-app/actions/workflows/build-deploy.yml/badge.svg)
-![Staging](https://github.com/moussebathily/afrikoin-app/actions/workflows/build-staging.yml/badge.svg)
-
-## 📫 Contact et support
-
-* Développeur principal : **Mousse Bathily**
-* 📧 Email : [bathilymousse24@gmail.com](mailto:bathilymousse24@gmail.com)
-* 📍 Basé en Afrique & diaspora
+* **Mousse Bathily** — développeur principal
+* 📧 [bathilymousse24@gmail.com](mailto:bathilymousse24@gmail.com)
+* 📍 Afrique (Mali) & diaspora
 
 ---
 
-> *"Publier et acheter en toute confiance partout en Afrique."* — **Équipe AfriKoin**
+> "AfriKoin, c’est publier et acheter partout en Afrique en toute sécurité."
+
