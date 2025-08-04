@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
+# 🌍 Bienvenue sur **AfriKoin App**
 
-## Project info
+> La première plateforme panafricaine de petites annonces avec **intelligence artificielle intégrée**, publication vocale, modération automatique et géolocalisation en temps réel.
 
-**URL**: https://lovable.dev/projects/627c2a15-9025-4f3b-8d08-4e5bbf9c4f69
+---
 
-## How can I edit this code?
+## 🔗 Projet en ligne
 
-There are several ways of editing your application.
+* **URL GitHub** : [AfriKoin App sur GitHub](https://github.com/moussebathily/afrikoin-app)
+* **Domaine personnalisé** : [https://afrikoin.online](https://afrikoin.online)
 
-**Use Lovable**
+## 🧩 Technologies utilisées
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/627c2a15-9025-4f3b-8d08-4e5bbf9c4f69) and start prompting.
+* ✅ **React + TypeScript** (frontend)
+* ⚡ **Vite** pour le développement rapide web
+* 🎨 **Tailwind CSS** + **shadcn/ui** pour les composants UI
+* 📱 **Expo + EAS Build** pour l'application mobile (Android)
+* 🤖 **IA GPT-4o intégrée** : modération, assistant, traduction
+* 🌍 **Multilingue** : français, anglais, bambara, etc.
+* 🔄 **GitHub Actions** : CI/CD, publication Play Store
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🧪 Démarrage local
 
-**Use your preferred IDE**
+```bash
+# 1. Cloner le projet
+git clone https://github.com/moussebathily/afrikoin-app.git
+cd afrikoin-app
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# 2. Installer les dépendances
+npm install
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3. Lancer en local (web)
 npm run dev
+
+# 4. Build mobile Android (EAS)
+eas build --platform android --profile preview
 ```
 
-**Edit a file directly in GitHub**
+📌 *Requis : Node.js v18+ — utilise [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)*
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## ⚙️ Fichiers clés
 
-**Use GitHub Codespaces**
+* `app.config.js` : configuration Expo
+* `eas.json` : profils de build (production, preview)
+* `tsconfig.json` : config TypeScript commune
+* `.github/workflows/` : automatisation CI/CD (build, publication, tag)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🚀 Déploiement
 
-## What technologies are used for this project?
+### 🌐 Web
 
-This project is built with:
+* Hébergé sur [afrikoin.online](https://afrikoin.online) via Vercel
 
-- Vite
-- TypeScript
-- React
-- shading-ui
-- Tailwind CSS
+### 📱 Mobile Android
 
-## How can I deploy this project?
+* Build avec EAS : `.aab` généré automatiquement
+* Publication sur Google Play via `upload-google-play`
+* Version actuelle : `1.2.2`
 
-Simply open [Lovable](https://lovable.dev/projects/627c2a15-9025-4f3b-8d08-4e5bbf9c4f69) and click on Share -> Publish.
+## 🔐 Keystore Android
 
-## Can I connect a custom domain to my Lovable project?
+* Fichier : `afrikoin-release-key.jks`
+* Configuration : `keystore.properties`
+* Protégé via `.gitignore`
+* Utilisé dans `build.gradle` pour la signature
 
-Yes, you can!
+## 📦 Publication automatisée
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+* **Tag Git** : versionné automatiquement (`v1.2.2`...)
+* **Publication Google Play** : déclenchée depuis GitHub Actions
+* **CHANGELOG.md** : mis à jour à chaque version
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📊 Badges CI
+
+![Build & Deploy](https://github.com/moussebathily/afrikoin-app/actions/workflows/build-deploy.yml/badge.svg)
+![Staging](https://github.com/moussebathily/afrikoin-app/actions/workflows/build-staging.yml/badge.svg)
+
+## 📫 Contact et support
+
+* Développeur principal : **Mousse Bathily**
+* 📧 Email : [bathilymousse24@gmail.com](mailto:bathilymousse24@gmail.com)
+* 📍 Basé en Afrique & diaspora
+
+---
+
+> *"Publier et acheter en toute confiance partout en Afrique."* — **Équipe AfriKoin**
