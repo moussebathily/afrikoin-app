@@ -1,0 +1,122 @@
+🌍 Bienvenue sur AfriKoin App
+
+> La première plateforme panafricaine de petites annonces avec intelligence artificielle intégrée, publication vocale, modération automatique et géolocalisation en temps réel.
+
+
+
+
+---
+
+🔗 Projet en ligne
+
+URL GitHub : AfriKoin App sur GitHub
+
+Domaine personnalisé : https://afrikoin.online
+
+
+🧩 Technologies utilisées
+
+✅ React + TypeScript (frontend)
+
+⚡ Vite pour le développement rapide web
+
+🎨 Tailwind CSS + shadcn/ui pour les composants UI
+
+📱 Expo + EAS Build pour l'application mobile (Android)
+
+🤖 IA GPT-4o intégrée : modération, assistant, traduction
+
+🌍 Multilingue : français, anglais, bambara, etc.
+
+🔄 GitHub Actions : CI/CD, publication Play Store
+
+
+🧪 Démarrage local
+
+# 1. Cloner le projet
+git clone https://github.com/moussebathily/afrikoin-app.git
+cd afrikoin-app
+
+# 2. Installer les dépendances
+npm install
+
+# 3. Vérifie que @vitejs/plugin-react est installé
+npm install --save-dev @vitejs/plugin-react
+
+# 4. Lancer en local (web)
+npm run dev
+
+# 5. Build mobile Android (EAS)
+eas build --platform android --profile preview
+
+📌 Requis : Node.js v18+ — utilise nvm
+
+⚙️ Fichiers clés
+
+vite.config.ts : configuration Vite avec alias @ et plugin React
+
+app.config.js : configuration Expo
+
+eas.json : profils de build (production, preview)
+
+tsconfig.json : config TypeScript commune
+
+.github/workflows/ : automatisation CI/CD (build, publication, tag)
+
+
+🚀 Déploiement
+
+🌐 Web
+
+Hébergé sur afrikoin.online via Vercel
+
+
+📱 Mobile Android
+
+Build avec EAS : .aab généré automatiquement
+
+Publication sur Google Play via upload-google-play
+
+Version actuelle : 1.2.2
+
+
+🔐 Keystore Android
+
+Fichier : afrikoin-release-key.jks
+
+Configuration : keystore.properties
+
+Protégé via .gitignore
+
+Utilisé dans build.gradle pour la signature
+
+
+📦 Publication automatisée
+
+Tag Git : versionné automatiquement (v1.2.2...)
+
+Publication Google Play : déclenchée depuis GitHub Actions
+
+CHANGELOG.md : mis à jour à chaque version
+
+
+📊 Badges CI
+
+ 
+
+📫 Contact et support
+
+Développeur principal : Mousse Bathily
+
+📧 Email : bathilymousse24@gmail.com
+
+📍 Basé en Afrique & diaspora
+
+
+
+---
+
+> "Publier et acheter en toute confiance partout en Afrique." — Équipe AfriKoin
+
+
+
