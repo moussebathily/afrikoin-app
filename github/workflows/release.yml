@@ -1,0 +1,34 @@
+name: 📦 Publier Android AAB sur le Play Store
+
+on:
+  workflow_dispatch: # permet de déclencher manuellement depuis GitHub
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🧰 Installer Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 📦 Installer Expo CLI
+        run: npm install -g expo-cli eas-cli
+
+      - name: 🧩 Installer dépendances
+        run: npm install
+
+      - name: ⚙️ Créer AAB pour Android (Production)
+        run: eas build --platform android --profile production --non-interactive
+        env:
+          EAS_TOKEN: ${{ secrets.EAS_TOKEN }}
+
+      - name: 📤 Télécharger sur Google Play
+        run: eas submit --platform android --non-interactive
+        env:
+          EAS_TOKEN: ${{ secrets.EAS_TOKEN }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
