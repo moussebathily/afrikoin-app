@@ -1,0 +1,9 @@
+Configuration,Language,File Path,Successfully Extracted,Failure Reason
+/language:javascript-typescript,JavaScript,postcss.config.js,true,""
+/language:javascript-typescript,JavaScript,app.config.js,true,""
+/language:javascript-typescript,JavaScript,eslint.config.js,true,""
+/language:javascript-typescript,TypeScript,vite.config (2).ts,true,""
+/language:javascript-typescript,TypeScript,vite.config.ts,true,""
+/language:javascript-typescript,TypeScript,App.tsx,true,""
+/language:javascript-typescript,TypeScript,tailwind.config.ts,true,""
+/language:javascript-typescript,TypeScript,vite.config (1).ts,true,""
