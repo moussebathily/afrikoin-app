@@ -1,4 +1,6 @@
 name: NodeJS with Gulp
+permissions:
+  contents: read
 
 on:
   push:
