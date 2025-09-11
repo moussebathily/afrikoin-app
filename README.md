@@ -58,6 +58,25 @@ eas build --platform android --profile production
 | `.github/workflows/`  | Actions GitHub CI/CD automatiques         |
 | `keystore.properties` | Config signature Android (via .gitignore) |
 
+## 🧱 Structure du projet
+
+```
+afrikoin-app/
+├── src/               # Code source (React / React Native)
+│   ├── components/
+│   └── ...
+├── public/            # Fichiers statiques pour le web
+├── tailwind.config.ts # Config Tailwind CSS
+└── ...
+```
+
+## ✅ Bonnes pratiques
+
+- Exécuter `npm run lint` avant chaque commit.
+- Préférer les imports ES modules (`import`) plutôt que `require`.
+- Organiser le code dans `src/components` pour favoriser la réutilisation.
+- Utiliser un fichier `.env` pour les variables sensibles (non commité).
+
 ## 📦 Build & Déploiement
 
 ### 🌐 Web (React)

@@ -2,6 +2,15 @@
 **/build/
 !**/src/**/build/
 
+# Node and web build artifacts
+node_modules/
+dist/
+
+# Generated archives and binaries
+*.zip
+*.apk
+*.aab
+
 # Ignore Gradle GUI config
 gradle-app.setting
 
